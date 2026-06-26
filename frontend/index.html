@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>🍛 African Restaurant</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="hero">
+    <h1>African Restaurant</h1>
+    <p class="subtitle">Taste the richness of Africa, one dish at a time</p>
+  </div>
+
+  <div class="card">
+    <label for="food">Choose your dish:</label>
+    <select id="food">
+      <option value="">-- Select a dish --</option>
+      <option value="Eru">Eru</option>
+      <option value="Egusi Soup">Egusi Soup</option>
+      <option value="Bunny Chow">Bunny Chow</option>
+    </select>
+
+    <div id="imageWrapper">
+      <img id="foodImage" alt="Food Preview" />
+    </div>
+
+    <button id="orderBtn" onclick="placeOrder()">Place Order</button>
+
+    <div id="message"></div>
+  </div>
+
+  <script>
+    const images = {
+      "Eru": "https://nosoma.s3.us-east-2.amazonaws.com/eru.jpg",
+      "Egusi Soup": "https://nosoma.s3.us-east-2.amazonaws.com/egusi.jpg",
+      "Bunny Chow": "https://nosoma.s3.us-east-2.amazonaws.com/bunny+chow.jpg"
+    };
+
+    document.getElementById("food").addEventListener("change", function () {
+      const food = this.value;
+      const img = document.getElementById("foodImage");
+      const wrapper = document.getElementById("imageWrapper");
+
+      if (images[food]) {
+        img.src = images[food];
+        wrapper.style.display = "block";
+      } else {
+        wrapper.style.display = "none";
+      }
+    });
+
+    async function placeOrder() {
+      const food = document.getElementById("food").value;
+      const msg = document.getElementById("message");
+      const btn = document.getElementById("orderBtn");
+
+      if (!food) {
+        msg.className = "error";
+        msg.innerText = "⚠️ Please select a dish first.";
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerText = "Placing order...";
+
+      try {
+        const res = await fetch("/order", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ food })
+        });
+
+        const data = await res.json();
+        msg.className = "success";
+        msg.innerText = "✅ " + data.message;
+      } catch (err) {
+        msg.className = "error";
+        msg.innerText = "❌ Failed to place order. Please try again.";
+      } finally {
+        btn.disabled = false;
+        btn.innerText = "Place Order";
+      }
+    }
+  </script>
+
+</body>
+</html>
+

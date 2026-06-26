@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a0a00, #3d1a00);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    color: #ffb347;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+.subtitle {
+    color: #ffd9a0;
+    font-size: 1rem;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,179,71,0.2);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+label {
+    display: block;
+    color: #ffd9a0;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid #ffb347;
+    background: #1a0a00;
+    color: #ffd9a0;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+}
+
+select:focus {
+    border-color: #ff8c00;
+    box-shadow: 0 0 0 3px rgba(255,140,0,0.2);
+}
+
+#imageWrapper {
+    display: none;
+    margin: 20px 0;
+}
+
+#foodImage {
+    width: 100%;
+    max-width: 380px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+#foodImage:hover {
+    transform: scale(1.03);
+}
+
+button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #cc5500, #ff8c00);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+button:hover:not(:disabled) {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#message {
+    margin-top: 20px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    display: block;
+}
+
+#message:empty {
+    display: none;
+}
+
+.success {
+    background: rgba(0, 200, 100, 0.15);
+    color: #00e676;
+    border: 1px solid rgba(0,200,100,0.3);
+}
+
+.error {
+    background: rgba(255, 50, 50, 0.15);
+    color: #ff5252;
+    border: 1px solid rgba(255,50,50,0.3);
+}
+
