@@ -3,6 +3,9 @@
 ## Overview
 A containerized restaurant ordering app deployed on AWS EC2 using Docker Compose, provisioned with Terraform, and automated with GitHub Actions CI/CD.
 
+## Screenshot
+![App Screenshot](screenshot.png)
+
 ## Architecture
 - **Frontend:** Nginx (HTML, CSS)
 - **Backend:** Python (Flask) — API server on Port 5000
