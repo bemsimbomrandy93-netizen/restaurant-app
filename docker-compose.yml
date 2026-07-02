@@ -14,7 +14,7 @@ services:
     environment:
       DB_HOST: db
       DB_USER: root
-      DB_PASSWORD: restaurant
+      DB_PASSWORD: *********
       DB_NAME: orders
     depends_on:
       - db
@@ -22,7 +22,7 @@ services:
   db:
     image: mysql:8.0
     environment:
-      MYSQL_ROOT_PASSWORD: restaurant
+      MYSQL_ROOT_PASSWORD: *********
       MYSQL_DATABASE: orders
     volumes:
       - db_data:/var/lib/mysql
