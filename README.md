@@ -77,37 +77,6 @@ restaurant-app/
     |-- workflows/
         |-- ci.yml
 ```
-restaurant-app/
-│
-├── docker-compose.yml
-│
-├── frontend/
-│   ├── Dockerfile
-│   ├── nginx.conf
-│   ├── index.html
-│   └── styles.css
-│
-├── backend/
-│   ├── Dockerfile
-│   ├── app.py
-│   └── requirements.txt
-│
-├── db/
-│   └── init.sql
-│
-├── terraform/
-│   ├── main.tf
-│   ├── variables.tf
-│   └── outputs.tf
-│
-├── ansible/
-│   └── playbook.yml
-│
-└── .github/
-└── workflows/
-└── ci.yml
-
----
 
 ## Step-by-Step Deployment Guide
 
