@@ -46,7 +46,7 @@ https://nosoma.s3.us-east-2.amazonaws.com/
 
 ## Project Structure
 
-````text
+```text
 restaurant-app/
 |
 |-- docker-compose.yml
