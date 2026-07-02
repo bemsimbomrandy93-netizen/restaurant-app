@@ -45,6 +45,38 @@ AWS S3 BUCKET (STATIC STORAGE)
 https://nosoma.s3.us-east-2.amazonaws.com/
 
 ## Project Structure
+
+````text
+restaurant-app/
+|
+|-- docker-compose.yml
+|
+|-- frontend/
+|   |-- Dockerfile
+|   |-- nginx.conf
+|   |-- index.html
+|   |-- styles.css
+|
+|-- backend/
+|   |-- Dockerfile
+|   |-- app.py
+|   |-- requirements.txt
+|
+|-- db/
+|   |-- init.sql
+|
+|-- terraform/
+|   |-- main.tf
+|   |-- variables.tf
+|   |-- outputs.tf
+|
+|-- ansible/
+|   |-- playbook.yml
+|
+|-- .github/
+    |-- workflows/
+        |-- ci.yml
+```
 restaurant-app/
 │
 ├── docker-compose.yml
